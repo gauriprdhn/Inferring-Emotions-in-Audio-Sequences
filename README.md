@@ -117,8 +117,43 @@ We used accuracy/los curves for training and validation sets and classification 
 
     accuracy                           0.92       617
    macro avg       0.92      0.92      0.92       617
-weighted avg       0.92      0.92      0.92       61
+weighted avg       0.92      0.92      0.92       617
 ```
 ## Deep Ensemble Network:
 
-I tried a simple ensemble using the abovementioned neural network being re-initialised and trained for 5 iterations, with each iteration giving us a new model. Once, we had the ensemble of 5 models, we used ensemble majority voting on the predictions over test set for each model to get the final predictions.
+I tried a simple ensemble using the abovementioned neural network being re-initialised and trained for 5 iterations, with each iteration giving us a new model. Once, we had the ensemble of 5 models, we used ensemble majority voting on the predictions over test set for each model to get the final predictions. Following are the stats for ensemble's performance:
+```
+              precision    recall  f1-score   support
+
+           0       0.97      0.99      0.98        76
+           1       0.91      0.96      0.93        67
+           2       0.94      0.88      0.91        73
+           3       0.92      0.91      0.92        93
+           4       1.00      0.99      0.99        91
+           5       0.90      0.91      0.90        66
+           6       0.99      1.00      0.99        67
+           7       0.99      1.00      0.99        84
+
+    accuracy                           0.95       617
+   macro avg       0.95      0.95      0.95       617
+weighted avg       0.95      0.95      0.95       617
+```
+## Conclusion:
+Now, look at the stats below, they are for a single network being trained over 300 epochs. This implies that even without being ensembled the model can reach an accuracy of 95% or above. As such, with this ensemble we're achieving nothing better than what could be done using a single model. 
+```
+              precision    recall  f1-score   support
+
+           0       0.96      0.99      0.97        76
+           1       0.90      0.85      0.88        67
+           2       0.90      0.86      0.88        73
+           3       0.84      0.90      0.87        93
+           4       1.00      0.98      0.99        91
+           5       0.91      0.80      0.85        66
+           6       0.94      1.00      0.97        67
+           7       0.95      1.00      0.98        84
+
+    accuracy                           0.94       617
+   macro avg       0.93      0.92      0.92       617
+weighted avg       0.93      0.93      0.94       617
+```
+I will strive to explore more methods to improve the performance of the ensemble such that it could be used as a viable alternative to the single DNN.
