@@ -53,9 +53,50 @@ By the confusion matrix, the accuracy of the XGB model is = 0.8922204213938412
 ```
 ## Single Deep Neural Network:
 I used an 18-layer neural network which could reach an accuracy of ~92% with learning rate of 5e-5 and epochs = 100. It's model architecture details are given below:
-
-![alt text](https://user-images.githubusercontent.com/45323656/71593544-8e90ba80-2b02-11ea-8842-4d65b17b0eba.png)
-
+``` 
+------------------MODEL SUMMARY------------------
+Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv1d_1 (Conv1D)            (None, 40, 128)           768       
+_________________________________________________________________
+activation_1 (Activation)    (None, 40, 128)           0         
+_________________________________________________________________
+conv1d_2 (Conv1D)            (None, 40, 128)           82048     
+_________________________________________________________________
+activation_2 (Activation)    (None, 40, 128)           0         
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 40, 128)           0         
+_________________________________________________________________
+max_pooling1d_1 (MaxPooling1 (None, 5, 128)            0         
+_________________________________________________________________
+conv1d_3 (Conv1D)            (None, 5, 128)            82048     
+_________________________________________________________________
+activation_3 (Activation)    (None, 5, 128)            0         
+_________________________________________________________________
+conv1d_4 (Conv1D)            (None, 5, 128)            82048     
+_________________________________________________________________
+activation_4 (Activation)    (None, 5, 128)            0         
+_________________________________________________________________
+conv1d_5 (Conv1D)            (None, 5, 128)            82048     
+_________________________________________________________________
+activation_5 (Activation)    (None, 5, 128)            0         
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 5, 128)            0         
+_________________________________________________________________
+conv1d_6 (Conv1D)            (None, 5, 128)            82048     
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 640)               0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 8)                 5128      
+_________________________________________________________________
+activation_6 (Activation)    (None, 8)                 0         
+=================================================================
+Total params: 416,136
+Trainable params: 416,136
+Non-trainable params: 0
+```
 We used accuracy/los curves for training and validation sets and classification report was generated to assess model performance.
 
 ![alt text](https://user-images.githubusercontent.com/45323656/71594475-11ffdb00-2b06-11ea-87bc-3673a5aeff33.png)
