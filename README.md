@@ -52,8 +52,28 @@ weighted avg       0.91      0.89      0.89      1234
 By the confusion matrix, the accuracy of the XGB model is = 0.8922204213938412
 ```
 ## Single Deep Neural Network:
-I used an 18-layer neural network which could reach an accuracy of ~92%. It's model architecture and performance details are given below:
+I used an 18-layer neural network which could reach an accuracy of ~92% with learning rate of 5e-5 and epochs = 100. It's model architecture details are given below:
 
 ![alt text](https://user-images.githubusercontent.com/45323656/71593544-8e90ba80-2b02-11ea-8842-4d65b17b0eba.png)
 
+We used accuracy/los curves for training and validation sets and classification report was generated to assess model performance.
 
+```
+               precision    recall  f1-score   support
+
+           0       0.97      0.96      0.97        76
+           1       0.92      0.87      0.89        67
+           2       0.90      0.88      0.89        73
+           3       0.90      0.86      0.88        93
+           4       0.97      0.96      0.96        91
+           5       0.85      0.86      0.86        66
+           6       0.88      1.00      0.94        67
+           7       0.98      1.00      0.99        84
+
+    accuracy                           0.92       617
+   macro avg       0.92      0.92      0.92       617
+weighted avg       0.92      0.92      0.92       61
+```
+## Deep Ensemble Network:
+
+I tried a simple ensemble using the abovementioned neural network being re-initialised and trained for 5 iterations, with each iteration giving us a new model. Once, we had the ensemble of 5 models, we used ensemble majority voting on the predictions over test set for each model to get the final predictions.
