@@ -12,7 +12,12 @@ I have uploaded the .joblib files for directly using the X (observations) and y 
 * Tensorflow- Keras
 * Numpy
 
-Keeping in mind that the dataset is imbalanced w.r.t to the labels available. SMOTE is used in here to balance it.
+## Addressing Class Imbalance:
+![alt text](https://user-images.githubusercontent.com/45323656/71593192-14ac0180-2b01-11ea-9321-8f7f2be6c1ca.png)
+
+Keeping in mind that the dataset is imbalanced w.r.t to the labels available. SMOTE is used in here to balance it. Mind here, the SMOTE refers to Synthetic Minority Oversampling Technique. Thus, it doesn't reduce the majority samples.
+
+![alt text](https://user-images.githubusercontent.com/45323656/71593279-6f455d80-2b01-11ea-9085-47804835f89c.png)
 
 ## XGBClassifier: 
 Firstly, I used a XGBoost classifier model, which with some hypertuning tuning gave me an accuracy ~ 89%. The classifer hyperparamters are detailed below: 
@@ -46,3 +51,5 @@ weighted avg       0.91      0.89      0.89      1234
 
 By the confusion matrix, the accuracy of the XGB model is = 0.8922204213938412
 ```
+## Single Deep Neural Network:
+I used an 18-layer neural network which could reach an accuracy of ~92%. It's model architecture and performance details are given below:
