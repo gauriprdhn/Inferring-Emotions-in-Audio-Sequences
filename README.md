@@ -53,3 +53,7 @@ By the confusion matrix, the accuracy of the XGB model is = 0.8922204213938412
 ```
 ## Single Deep Neural Network:
 I used an 18-layer neural network which could reach an accuracy of ~92%. It's model architecture and performance details are given below:
+
+![alt text](https://user-images.githubusercontent.com/45323656/71593544-8e90ba80-2b02-11ea-8842-4d65b17b0eba.png)
+
+
