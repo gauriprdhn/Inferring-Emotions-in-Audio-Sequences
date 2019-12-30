@@ -58,6 +58,10 @@ I used an 18-layer neural network which could reach an accuracy of ~92% with lea
 
 We used accuracy/los curves for training and validation sets and classification report was generated to assess model performance.
 
+![alt text](https://user-images.githubusercontent.com/45323656/71594475-11ffdb00-2b06-11ea-87bc-3673a5aeff33.png)
+
+![alt text](https://user-images.githubusercontent.com/45323656/71594482-1cba7000-2b06-11ea-92ab-f8f896468c32.png)
+
 ```
                precision    recall  f1-score   support
 
